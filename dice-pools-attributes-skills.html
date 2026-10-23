@@ -4,19 +4,38 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>KidzMash — Challenge & Conflict Resolution</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#eef1f5;color:#17243a;font-family:Arial,Helvetica,sans-serif}.sheet{width:8.5in;min-height:11in;margin:20px auto;padding:.48in .56in;background:#fff;box-shadow:0 3px 18px #0002}h1{font-size:23px;margin:0 0 4px}.sub{font-size:11px;color:#526073;margin:0 0 13px}.intro{font-size:12px;line-height:1.45;margin:0 0 10px}.core{border:2px solid #344b6a;border-radius:8px;padding:10px 12px;margin:0 0 12px}h2{font-size:15px;margin:0 0 7px}.core p,.optional p{font-size:11.5px;line-height:1.4;margin:5px 0}.write{display:inline-block;border-bottom:1px solid #657589;min-width:55px;height:17px;vertical-align:bottom}.example{background:#eef2f7;padding:7px 9px;border-radius:5px;font-size:11.5px;line-height:1.4;margin-top:8px}.optional{margin-bottom:10px;border:1px solid #aab6c4;border-radius:8px;padding:10px 12px;background:#f1f3f6}.columns{display:grid;grid-template-columns:1fr 1fr;gap:13px}.group-title{font-size:12px;font-weight:bold;background:#e9eef5;border:1px solid #aab6c4;border-radius:5px;padding:6px 8px;margin:0 0 7px}.card{border:1px solid #aab6c4;border-radius:6px;padding:8px 9px;margin-bottom:8px;break-inside:avoid}.card h3{font-size:12px;margin:0 0 5px}.choices{display:grid;grid-template-columns:1fr 1fr;gap:5px 7px}.choice{font-size:11.5px;white-space:nowrap}.circle{display:inline-block;border:1.3px solid #17243a;border-radius:50%;width:11px;height:11px;vertical-align:-1px;margin-right:5px}.own{grid-column:span 2}.own .write{min-width:130px}.skills{border:1px solid #aab6c4;border-radius:8px;padding:10px 12px;margin-top:9px;background:#f1f3f6}.skill-examples{font-size:10.5px;color:#536277;line-height:1.4;margin:3px 0 7px}.skill-line{border-bottom:1px solid #aab6c4;height:23px;font-size:11px;padding-top:5px}.fine{font-size:10.5px;color:#536277;line-height:1.4;margin:6px 0 0}@page{size:letter portrait;margin:0}@media print{body{background:white}.sheet{margin:0;box-shadow:none;min-height:11in}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}@media(max-width:850px){.sheet{width:100%;min-height:auto;margin:0;padding:22px}.columns{gap:9px}}
+*{box-sizing:border-box}body{margin:0;background:#eef1f5;color:#17243a;font-family:Arial,Helvetica,sans-serif}.sheet{width:8.5in;min-height:11in;margin:20px auto;padding:.48in .56in;background:#fff;box-shadow:0 3px 18px #0002}h1{font-size:23px;margin:0 0 4px}.sub{font-size:11px;color:#526073;margin:0 0 13px}.intro{font-size:12px;line-height:1.45;margin:0 0 10px}.core{border:2px solid #344b6a;border-radius:8px;padding:10px 12px;margin:0 0 12px}h2{font-size:15px;margin:0 0 7px}.core p,.optional p{font-size:11.5px;line-height:1.4;margin:5px 0}.write{display:inline-block;border-bottom:1px solid #657589;min-width:55px;height:17px;vertical-align:bottom}.examples{margin-top:5px;line-height:1.5}.example{background:#e8eef7;border:2px solid #344b6a;border-left:6px solid #344b6a;padding:11px 13px;border-radius:9px;font-size:12px;line-height:1.5;margin:12px 0 15px}.example-heading{font-size:15px;display:block;margin-bottom:6px}.formula{font-weight:600;background:#fff;border-radius:5px;padding:7px 9px;margin:6px 0}.examples{margin-top:7px;line-height:1.55}.optional{margin-bottom:10px;border:1px solid #aab6c4;border-radius:8px;padding:10px 12px;background:#f1f3f6}.columns{display:grid;grid-template-columns:1fr 1fr;gap:13px}.group-title{font-size:12px;font-weight:bold;background:#e9eef5;border:1px solid #aab6c4;border-radius:5px;padding:6px 8px;margin:0 0 7px}.card{background:#fff;border:1px solid #aab6c4;border-radius:6px;padding:8px 9px;margin-bottom:8px;break-inside:avoid}.card h3{font-size:12px;margin:0 0 5px}.choices{display:grid;grid-template-columns:1fr 1fr;gap:5px 7px}.choice{font-size:11.5px;white-space:nowrap}.circle{display:inline-block;border:1.3px solid #17243a;border-radius:50%;width:11px;height:11px;vertical-align:-1px;margin-right:5px}.own{grid-column:span 2}.own .write{min-width:130px}.skills{border:1px solid #aab6c4;border-radius:8px;padding:10px 12px;margin-top:9px;background:#f1f3f6}.skill-examples{font-size:10.5px;color:#536277;line-height:1.4;margin:-2px 0 6px}.skill-line{border-bottom:1px solid #aab6c4;height:23px;font-size:11px;padding-top:5px}.fine{font-size:10.5px;color:#536277;line-height:1.4;margin:6px 0 0}@page{size:letter portrait;margin:0}@media print{body{background:white}.sheet{margin:0;box-shadow:none;min-height:11in}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}@media(max-width:850px){.sheet{width:100%;min-height:auto;margin:0;padding:22px}.columns{gap:9px}}
+
+/* Consistent print typography: title > section headings > body > helper text */
+:root{--type-body:12px;--type-heading:15px;--type-helper:11px}
+h1{font-size:22px;line-height:1.16;margin-bottom:5px}
+.sub{font-size:12px;line-height:1.35;margin-bottom:12px}
+.intro,.core p,.optional p,.skills p,.examples,.formula{font-size:var(--type-body);line-height:1.45}
+h2,.example-heading{font-size:var(--type-heading);line-height:1.25;font-weight:700}
+.example-heading{margin-bottom:7px}
+.group-title,.card h3{font-size:13px;line-height:1.3}
+.choice{font-size:12px;line-height:1.3}
+.skill-examples,.fine{font-size:var(--type-helper);line-height:1.4}
+.skill-examples{margin:1px 0 6px}
+.example{font-size:var(--type-body)}
 </style>
 </head>
 <body><main class="sheet">
-<h1>Roll your own tabletop role playing game!</h1>
-<p class="sub">KidzMash · Design Your Challenge &amp; Conflict Resolution System</p>
-<p class="intro"><strong>Decide how your game handles challenges!</strong> Every character can try a challenge using a General Pool. You can stop there, or let attributes, skills, and traits add dice or ability cubes when relevant. This page sets the rules; players assign their character points during character creation.</p>
+<h1>Design Your Challenge &amp; Conflict Resolution System</h1>
+<p class="sub">KidzMash: Roll your own tabletop role playing game!</p>
+<p class="intro"><strong>Decide how your game handles challenges!</strong> When your game requires a challenge or conflict resolution, characters can use a General Pool to determine the outcome. You can stop there, or let attributes, skills, and traits add dice or ability cubes when relevant. This page sets the rules; players assign their character points during character creation.</p>
+<div class="example"><strong class="example-heading">How to Build a Pool for a Challenge</strong>
+<div class="formula">General Pool + relevant Attribute points <strong>(optional)</strong> + relevant Skill or Trait points <strong>(optional)</strong> = Total dice or ability cubes.</div>
+<div class="examples"><strong>General Pool only:</strong> General (3) = <strong>3 dice or ability cubes</strong>.<br>
+<strong>General + Attribute:</strong> General (3) + Strength (2) = <strong>5 dice or ability cubes</strong>.<br>
+<strong>General + Attribute + Skill:</strong> General (3) + Strength (2) + Climbing (1) = <strong>6 dice or ability cubes</strong>.</div>
+<span class="fine">These numbers are examples, not fixed bonuses. Players assign attribute and skill points during character creation. Add only bonuses relevant to the challenge.</span></div>
 <section class="core">
 <h2>1 · Start with a General Pool</h2>
 <p>Choose the <strong>General Dice Pool</strong> or <strong>General Ability Cube Pool</strong> characters use to attempt challenges. Circle one:</p>
 <p>◯ Dice &nbsp;&nbsp;&nbsp; ◯ Ability cubes &nbsp;&nbsp;&nbsp; Starting pool size: <span class="write"></span></p>
 <p>Can the general pool improve during the game? &nbsp; ◯ Yes &nbsp; ◯ No &nbsp; ◯ I'll decide later</p>
-<div class="example"><strong>How to build a pool for a challenge:</strong> General Pool + relevant Attribute points + relevant Skill or Trait points = Total dice or ability cubes.<br><strong>Example:</strong> General (3) + Strength points (2) + Climbing points (1) = <strong>6 dice or ability cubes</strong>. These numbers are examples, not fixed bonuses. Players assign points during character creation; add only what applies to the challenge.</div>
+
 </section>
 <section class="optional">
 <h2>2 · Optional Add-on: Attributes</h2>
@@ -32,7 +51,7 @@
 <div class="card"><h3>6 · Determination</h3><div class="choices"><div class="choice"><span class="circle"></span>Determination</div><div class="choice"><span class="circle"></span>Chutzpah</div><div class="choice"><span class="circle"></span>Guts</div><div class="choice own"><span class="circle"></span>My own: <span class="write"></span></div></div></div>
 </section></div></section>
 <section class="skills"><h2>3 · Optional Add-on: Skills &amp; Traits</h2>
-<p>Skills and traits are specific talents or characteristics. If included, <strong>points assigned to relevant skills or traits add dice or ability cubes</strong> when resolving a challenge. Players assign those points during character creation. Think of ideas for your game:</p>
+<p>Skills and traits are specific talents or characteristics. If included, <strong>points assigned to relevant skills or traits add dice or ability cubes</strong> when resolving a challenge. Players assign those points during character creation. Think of ideas for your game.</p>
 <p class="skill-examples">Examples: Climbing, Tracking, Sneaking, Cooking, Animal Friend</p>
 <div class="skill-line"></div><div class="skill-line"></div><div class="skill-line"></div>
 
